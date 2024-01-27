@@ -11,7 +11,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard v1</li>
+                        <li class="breadcrumb-item active">Dashboard</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -28,9 +28,9 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>
+                            <h4>
                                 {{ App\Models\Product::count() }}
-                            </h3>
+                            </h4>
 
                             <p>Jumlah Semua Produk</p>
                         </div>
@@ -45,9 +45,9 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>
+                            <h4>
                                 {{ App\Models\Category::count() }}
-                            </h3>
+                            </h4>
 
                             <p>Jumlah Kategori Produk</p>
                         </div>
@@ -62,10 +62,10 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3>
+                            <h4>
                                 Rp.
                                 {{ App\Models\Product::sum('price') }}
-                            </h3>
+                            </h4>
 
                             <p>Jumlah Total Harga Semua Produk</p>
                         </div>
@@ -80,9 +80,9 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>
+                            <h4>
                                 {{ App\Models\Product::sum('stock') }}
-                            </h3>
+                            </h4>
 
                             <p>Jumlah Stok Semua Produk</p>
                         </div>

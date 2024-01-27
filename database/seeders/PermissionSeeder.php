@@ -15,20 +15,20 @@ class PermissionSeeder extends Seeder
      */
     public function run(): void
     {
-        $role_user =  Role::updateOrCreate(
+        $role_admin =  Role::updateOrCreate(
             [
-                'name' => 'user'
-            ],
-            [
-                'name' => 'user'
-            ]
-        );
-        $role_admin = Role::updateOrCreate(
-            [
-            'name' => 'admin'
+                'name' => 'admin'
             ],
             [
                 'name' => 'admin'
+            ]
+        );
+        $role_superAdmin = Role::updateOrCreate(
+            [
+            'name' => 'super admin'
+            ],
+            [
+                'name' => 'super admin'
             ]
         );
         $permission =  Permission::updateOrCreate(
@@ -64,18 +64,33 @@ class PermissionSeeder extends Seeder
             ]
         );
 
+        $permission5 =  Permission::updateOrCreate(
+            [
+                'name' => 'view_user'
+            ],
+            [
+                'name' => 'view_user'
+            ]
+        );
+
 
         $role_admin->givePermissionTo($permission);
         $role_admin->givePermissionTo($permission2);
         $role_admin->givePermissionTo($permission3);
         $role_admin->givePermissionTo($permission4);
 
-        $role_user->givePermissionTo($permission3);
+        $role_superAdmin->givePermissionTo($permission);
+        $role_superAdmin->givePermissionTo($permission3);
+        $role_superAdmin->givePermissionTo($permission5);
 
         $user = User::find(1);
-        $user->assignRole('admin');
+        $user->assignRole('super admin');
 
-        $user2 = User::find(2);
-        $user2->assignRole('user');
+        $user2 = User::find(7);
+        $user2->assignRole('admin');
+
+        // CATATAN / TO DO
+        // fungsi role tidak berfungsi jika kita membuat user baru
+        // jadi kita harus set role secara manual
     }
 }

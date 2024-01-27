@@ -32,11 +32,11 @@
         }
 
         .login{
-            background-color: #9fafca;
+            background-color: #000000;
             color: #ffffff;
         }
         .login:hover{
-            background-color: #111216;
+            background-color: #1f1f1f;
             color: #ffffff;
         }
 
@@ -115,21 +115,21 @@
                 Sign In
               </button>
             </a>
-            <p class="text-center">- or -</p>
+            {{-- <p class="text-center">- or -</p>
             <button type="submit" class="btn login-google mb-1 w-100">
               <i class="fa-brands fa-google"></i>
               Sign In with Google
-            </button>
+            </button> --}}
           </div>
 
-          <p class="signup text-center">
+          {{-- <p class="signup text-center">
             Don't have an account?
             <a
               style="text-decoration: none; color: black; font-weight: bold"
               href="{{route('register')}}"
               >Sign Up</a
             >
-          </p>
+          </p> --}}
           <a href="{{route('home')}}" class="text-decoration-none text-body-secondary">
               <i class="fas fa-arrow-left"></i>
               Kembali
